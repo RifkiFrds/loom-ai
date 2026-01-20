@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core */
+    --loom-dark: #0C0C0C;
+    --loom-light: #EBEBEB;
+
+    /* Editorial Warm */
+    --loom-warm-1: #3a2524;
+    --loom-warm-2: #1a1211;
+
+    /* Accent */
+    --loom-accent: #B9B8BC;
+
+    /* Ambient */
+    --loom-rose: #6f4a48;
+  }
+
+  html {
+    font-family: "JetBrains Mono", monospace;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[color:var(--loom-dark)] text-[color:var(--loom-light)] antialiased;
+    margin: 0;
+  }
+
+  h1, h2, h3 {
+    font-family: "Bodoni Moda SC", serif;
+    letter-spacing: 0.04em;
+  }
+
+  ::selection {
+    background-color: var(--loom-accent);
+    color: var(--loom-dark);
+  }
+}
