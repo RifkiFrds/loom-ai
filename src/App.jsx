@@ -10,7 +10,7 @@ function App() {
         {/* Layout Route */}
         <Route element={<AppLayout />}>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/recommendations" element={<RecommendationPage />} />
+          <Route path="/features" element={<RecommendationPage />} />
         </Route>
       </Routes>
     </Router>
