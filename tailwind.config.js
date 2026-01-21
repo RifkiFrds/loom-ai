@@ -23,6 +23,7 @@ export default {
 
           /* Ambient / glow */
           rose: "#6f4a48",
+          roseTwo: "#FF8F91",
 
           /* UI utility */
           border: "rgba(235,235,235,0.12)",
