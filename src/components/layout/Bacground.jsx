@@ -1,51 +1,109 @@
 const Background = () => {
   return (
-    <div className="absolute inset-0 -z-10">
-      {/* Base gradient full height */}
+    <div className="absolute inset-0 -z-10 overflow-hidden">
+      {/* Base gradient */}
       <div
         className="absolute inset-0"
         style={{
           background: `
             linear-gradient(
               to bottom,
-              #3a2524 0%,
-              #1a1211 20%,
-              #0c0c0c 50%,
-              #0c0c0c 75%,
-              #1a1211 100%
+            #3a2524 0%,
+            #1a1211 12%,
+            #0c0c0c 40%,
+            #0c0c0c 75%,
+            #1a1211 100%
             )
           `,
         }}
       />
 
       {/* LOOM LETTER FLOW */}
-      <div className="relative">
+       <div className="relative">
         {/* L */}
-        <SectionLetter top="10vh">L</SectionLetter>
+        <SectionLetter
+          letter="L"
+          topMobile="8vh"
+          topDesktop="10vh"
+        />
 
         {/* O */}
-        <SectionLetter top="120vh">O</SectionLetter>
+        <SectionLetter
+          letter="O"
+          topMobile="90vh"
+          topDesktop="105vh"
+        />
 
         {/* O */}
-        <SectionLetter top="230vh">O</SectionLetter>
+        <SectionLetter
+          letter="O"
+          topMobile="170vh"
+          topDesktop="205vh"
+        />
 
         {/* M */}
-        <SectionLetter top="340vh">M</SectionLetter>
+        <SectionLetter
+          letter="M"
+          topMobile="250vh"
+          topDesktop="295vh"
+        />
       </div>
 
-      {/* Ambient grain */}
-      <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#ffffff_8px,transparent_1px)] [background-size:3px_3px]" />
+      {/* Ambient grain (responsive) */}
+      <div
+        className="
+          absolute inset-0
+          opacity-[0.025]
+          bg-[radial-gradient(#ffffff_0.5px)]
+          [background-size:4px_4px]
+          md:opacity-[0.035]
+          md:[background-size:3px_3px]
+        "
+      />
     </div>
   );
 };
 
-const SectionLetter = ({ children, top }) => (
-  <div
-    className="absolute left-[5%] text-[42rem] font-serif font-bold text-loom-rose/30 leading-none select-none blur-[3px]"
-    style={{ top }}
-  >
-    {children}
-  </div>
+/* ======================
+   LETTER COMPONENT
+====================== */
+
+const SectionLetter = ({ letter, topMobile, topDesktop }) => (
+  <>
+    {/* Mobile */}
+    <div
+      className="
+        absolute md:hidden
+        left-[1%]
+        font-serif font-bold
+        text-loom-rose/25
+        leading-none
+        select-none
+        blur-[2px]
+        text-[30rem] sm:text-[34rem]
+      "
+      style={{ top: topMobile }}
+    >
+      {letter}
+    </div>
+
+    {/* Desktop */}
+    <div
+      className="
+        absolute hidden md:block
+        left-[5%]
+        font-serif font-bold
+        text-loom-rose/25
+        leading-none
+        select-none
+        blur-[4px]
+        text-[32rem] lg:text-[42rem]
+      "
+      style={{ top: topDesktop }}
+    >
+      {letter}
+    </div>
+  </>
 );
 
 export default Background;
