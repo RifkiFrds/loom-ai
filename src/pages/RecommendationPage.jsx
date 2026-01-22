@@ -6,7 +6,7 @@ import {
     MetricsSection,
     ChartsSection,
     RecommendationSection
-} from '@/components/recommendation';
+} from '@/components/Recommendation';
 import { Button } from '@/components/ui/Button';
 import { RotateCcw } from 'lucide-react';
 
