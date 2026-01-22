@@ -34,7 +34,7 @@ export const HeroSection = () => {
                 <div className="flex gap-6 pt-4">
                     <Button
                         className="h-14 px-8 rounded-none bg-loom-light text-loom-dark hover:bg-white"
-                        onClick={() => navigate("/recommendations")}
+                        onClick={() => navigate("/features")}
                     >
                         Get Started
                     </Button>
