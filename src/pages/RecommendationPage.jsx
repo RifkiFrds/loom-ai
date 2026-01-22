@@ -71,7 +71,7 @@ const RecommendationPage = () => {
                                 <h2 className="text-2xl font-serif text-loom-light mb-8 border-b border-loom-light/10 pb-4">
                                     Performance Overview
                                 </h2>
-                                <MetricsSection data={data.data_insights} />
+                                <MetricsSection data={data.metrics} />
                             </section>
 
                             {/* Section 2: Visualizations */}
@@ -79,7 +79,7 @@ const RecommendationPage = () => {
                                 <h2 className="text-2xl font-serif text-loom-light mb-8 border-b border-loom-light/10 pb-4">
                                     Behavioral Analytics
                                 </h2>
-                                <ChartsSection data={data.data_insights} />
+                                <ChartsSection data={data.charts} />
                             </section>
 
                             {/* Section 3: AI Recommendations */}
@@ -87,7 +87,7 @@ const RecommendationPage = () => {
                                 <h2 className="text-2xl font-serif text-loom-light mb-8 border-b border-loom-light/10 pb-4">
                                     Strategic Intelligence
                                 </h2>
-                                <RecommendationSection recommendations={data.ai_recommendations} />
+                                <RecommendationSection recommendations={data.recommendations} />
                             </section>
                         </motion.div>
                     )}

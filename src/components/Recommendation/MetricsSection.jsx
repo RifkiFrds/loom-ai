@@ -1,3 +1,24 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { CreditCard, Users, ShoppingBag, Calendar } from 'lucide-react';
+
+const MetricCard = ({ label, value, icon: Icon, delay }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay, duration: 0.5 }}
+    className="bg-loom-light/[0.02] border border-loom-light/10 p-6 rounded-lg backdrop-blur-sm flex items-start justify-between group hover:bg-loom-light/5 transition-all"
+  >
+    <div>
+      <p className="text-loom-light/60 font-mono text-xs uppercase tracking-wider mb-2">{label}</p>
+      <h3 className="text-2xl font-serif text-loom-light font-medium">{value}</h3>
+    </div>
+    <div className="p-3 bg-loom-accent/10 rounded-full text-loom-accent group-hover:bg-loom-accent/20 transition-colors">
+      <Icon size={20} />
+    </div>
+  </motion.div>
+);
+
 export const MetricsSection = ({ data }) => {
   if (!data) return null;
 
